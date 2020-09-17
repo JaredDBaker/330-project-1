@@ -10,7 +10,21 @@
 <body>
     <script src = "src/jdbLIB.js"></script>
     <script src = "src/index.js"></script>
-    <h1>Phyllotaxis Art Maker</h1>
+    <h1>Phyllotaxis Mover</h1>
     <canvas>Something is wrong</canvas>
 </body>
+<section>
+    <button id="playButton">Play</button> <button id="pauseButton">Pause</button> <button id="resetButton">Reset</button>
+</section>
+<section>
+    <label>Movement:
+        <select id="chooserMover">
+          <option value="line" selected>Line</option>
+          <option value="sine">Sine</option> 
+          <option value="cosine">Cosine</option>
+          <option value="circle">Circle</option>
+        </select>
+      </label>
+      <span><input type="checkbox" id="trailCB" checked><label for="trailCB">Create Trail</label></span>
+</section>
 </html>
