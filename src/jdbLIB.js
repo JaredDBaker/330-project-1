@@ -1,9 +1,9 @@
 (function(){
-
-const jdbLIB = {
+    "use strict";
+    const jdbLIB = {
     
-};
+    };
 
-window["jdbLIB"] = jdbLIB;
+    window["jdbLIB"] = jdbLIB;
 
 })();
