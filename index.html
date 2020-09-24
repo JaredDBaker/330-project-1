@@ -11,25 +11,58 @@
     <script src = "src/jdbLIB.js"></script>
     <script src = "src/index.js"></script>
     <h1>Phyllotaxis Mover</h1>
-    <canvas>Something is wrong</canvas>
-</body>
-<section>
-    <button id="playButton">Play</button> <button id="pauseButton">Pause</button> <button id="resetButton">Reset</button>
-    <span><input type="checkbox" id="trailCB" checked><label for="trailCB">Create Trail</label></span>
-</section>
-<section>
-    <label>Movement:
-        <select id="chooserMover">
-          <option value="line" selected>Line</option>
-          <option value="sine">Sine</option> 
-          <option value="cosine">Cosine</option>
-          <option value="circle">Circle</option>
+    <canvas>Something is wrong</canvas>  
+
+
+<div id = "controls">
+    <button id="playButton">Play</button> <button id="pauseButton">Pause</button> <button id="resetButton">Reset</button> <button id = "printButton">Print</button>
+
+    <label>Angle:
+        <select id="angleChooser">
+          <option value="147.5" selected>147.5</option>
+          <option value="137.3">137.3</option> 
+          <option value="137.5">137.5</option>
+          <option value="137.6">137.6</option>
         </select>
       </label>
+      <span><label for="angleSlider">Angle: </label><input type="range" min="1" max="200" value="50" class="slider" id="angleSlider"></span> 
 
+    <br>
+        <label>Movement:
+            <select id="chooserMover">
+            <option value="line" selected>Line</option>
+            <option value="sine">Sine</option> 
+            <option value="cosine">Cosine</option>
+            <option value="starFall">Starfall</option>
+            <option value="starRise">StarRise</option>
+            </select>
+        </label>
+        <label>Color:
+            <select id="colorChooser">
+            <option value="red" selected>red</option>
+            <option value="blue">blue</option> 
+            <option value="green">green</option>
+            <option value="rainbow">Rainbow</option>
+            </select>
+        </label>
 
-    <span><label for="trailSlider">Trail Length: </label><input type="range" min="1" max="200" value="50" class="slider" id="trailSlider"></span>    
-</section>
-<span><label for="sizeSlider">Size: </label><input type="range" min="1" max="20" value="2" class="slider" id="sizeSlider"></span>    
-<span><label for="stepSlider">Steps: </label><input type="range" min="1" max="200" value="140" class="slider" id="stepSlider"></span>    
+        <span><label for="trailSlider">Trail Length: </label><input type="range" min="1" max="200" value="50" class="slider" id="trailSlider"></span>
+        <span><input type="checkbox" id="trailCB" checked><label for="trailCB">Create Trail</label></span>
+    <br>
+    <span><label for="sizeSlider">Size: </label><input type="range" min="1" max="20" value="2" class="slider" id="sizeSlider"></span>    
+    <span><label for="spaceSlider">Space: </label><input type="range" min="1" max="20" value="2" class="slider" id="spaceSlider"></span>    
+    <span><label for="stepSlider">Steps: </label><input type="range" min="1" max="1000" value="140" class="slider" id="stepSlider"></span>  
+
+    </div> 
+
+<section id = "stats"> 
+    <h4 id = "angleDisplay">Angle: 147.5</h4>
+    <h4 id = "moveDisplay">| Movement: Line</h4>
+    <h4 id = "colorDisplay">| Color: red</h4>
+    <h4 id = "trailDisplay">| Trail Length: 50</h4>
+    <h4 id = "sizeDisplay">| Size: 2</h4>
+    <h4 id = "spaceDisplay">| Space: 2</h4>
+    <h4 id = "stepsDisplay">| Steps: 140</h4>
+</section> 
+</body>
 </html>

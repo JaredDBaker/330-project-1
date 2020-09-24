@@ -1,1 +1,32 @@
-body{font-family:"serif";}
+*{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #c9e4e7;
+    color: #1e1014;
+}
+
+body{
+    max-width: 960px;
+    margin: auto;
+    text-align: center;
+}
+
+canvas{
+    border: darkcyan 5px solid;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 640px;
+}
+button{
+    background-color: #2b50aa;
+    color: whitesmoke;
+}
+h4{
+    display:inline;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
