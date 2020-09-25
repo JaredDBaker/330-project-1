@@ -5,7 +5,7 @@
     window.onload = init;
     let canvas;
     let ctx; 
-    const canvasWidth = 640, canvasHeight = 480;
+    const canvasWidth = 800, canvasHeight = 600;
     let divergence = 147.5;
     let space = 2;
     let size = 2
@@ -150,7 +150,7 @@
             yDis = -5;
         }
         if(xDis > canvasWidth) xDis = -canvasWidth/2;
-        jdbLIB.updatePhyllos(xDis, yDis, canvasWidth, canvasHeight, currentMover);
+        jdbLIB.updatePhyllos(xDis, yDis, canvasWidth, canvasHeight);
         jdbLIB.drawPhyllos();
     }
 

@@ -8,35 +8,56 @@
 
 </head>
 <body>
+    
     <script src = "src/jdbLIB.js"></script>
     <script src = "src/index.js"></script>
     <h1>Phyllotaxis Mover</h1>
-    <canvas>Something is wrong</canvas>  
+    <p>Welcome to the Phyollotaxis mover.  This is a project themed around creating phyllotaxis and moving them around to create interesting images.  To create another phyllotaxis click on the screen
+        adjust the controls to custimize your phyllotaxis and its movement around the canvas.
+    </p>
 
+<div class = "container">
 
-<div id = "controls">
-    <button id="playButton">Play</button> <button id="pauseButton">Pause</button> <button id="resetButton">Reset</button> <button id = "printButton">Print</button>
+    <div id = "instructions">
+        <h2>Instructions:</h2>
+        <ul>
+            <li>Click on the Canvas to create more phyllotaxis</li>
+            <li>Use controls on left to custimize phyllotaxis</li>
+            <li>Press play to start movement and use the movement dropbox to change move type</li>
+            <li>Use the checkbox to turn trails on or off and use the slider to control its length</li>
+            <li>Use the reset button to rest the canvas </li>
+            <li>Use the 'print' button to save the image on another page</li>
+        </ul>
+    </div>
+    <div id = "canvas">
+        <canvas>Something is wrong</canvas>  
+    </div>
 
-    <label>Angle:
-        <select id="angleChooser">
-          <option value="147.5" selected>147.5</option>
-          <option value="137.3">137.3</option> 
-          <option value="137.5">137.5</option>
-          <option value="137.6">137.6</option>
-        </select>
-      </label>
-      <span><label for="angleSlider">Angle: </label><input type="range" min="1" max="200" value="50" class="slider" id="angleSlider"></span> 
-
-    <br>
+    <div id = "controls">
+        <button id="playButton">Play</button> <button id="pauseButton">Pause</button> <button id="resetButton">Reset</button> <button id = "printButton">Print</button>
+        <br>
         <label>Movement:
-            <select id="chooserMover">
+        <select id="chooserMover">
             <option value="line" selected>Line</option>
             <option value="sine">Sine</option> 
             <option value="cosine">Cosine</option>
             <option value="starFall">Starfall</option>
             <option value="starRise">StarRise</option>
+        </select>
+        </label>
+            <br>
+        <label>Angle:
+            <select id="angleChooser">
+            <option value="147.5" selected>147.5</option>
+            <option value="137.3">137.3</option> 
+            <option value="137.5">137.5</option>
+            <option value="137.6">137.6</option>
             </select>
         </label>
+        <br>
+        <span><label for="angleSlider">Angle: </label><input type="range" min="1" max="200" value="50" class="slider" id="angleSlider"></span>
+        <br>
+
         <label>Color:
             <select id="colorChooser">
             <option value="red" selected>red</option>
@@ -45,17 +66,21 @@
             <option value="rainbow">Rainbow</option>
             </select>
         </label>
-
-        <span><label for="trailSlider">Trail Length: </label><input type="range" min="1" max="200" value="50" class="slider" id="trailSlider"></span>
+        <br>
         <span><input type="checkbox" id="trailCB" checked><label for="trailCB">Create Trail</label></span>
-    <br>
-    <span><label for="sizeSlider">Size: </label><input type="range" min="1" max="20" value="2" class="slider" id="sizeSlider"></span>    
-    <span><label for="spaceSlider">Space: </label><input type="range" min="1" max="20" value="2" class="slider" id="spaceSlider"></span>    
-    <span><label for="stepSlider">Steps: </label><input type="range" min="1" max="1000" value="140" class="slider" id="stepSlider"></span>  
+        <br>
+        <span><label for="trailSlider">Trail Length: </label><input type="range" min="1" max="200" value="50" class="slider" id="trailSlider"></span>
+
+        <br>
+        <span><label for="sizeSlider">Size: </label><input type="range" min="1" max="20" value="2" class="slider" id="sizeSlider"></span>    <br>
+        <span><label for="spaceSlider">Space: </label><input type="range" min="1" max="20" value="2" class="slider" id="spaceSlider"></span>    <br>
+        <span><label for="stepSlider">Steps: </label><input type="range" min="1" max="1000" value="140" class="slider" id="stepSlider"></span>  
 
     </div> 
 
-<section id = "stats"> 
+</div>
+
+    <section id = "stats"> 
     <h4 id = "angleDisplay">Angle: 147.5</h4>
     <h4 id = "moveDisplay">| Movement: Line</h4>
     <h4 id = "colorDisplay">| Color: red</h4>
@@ -63,10 +88,7 @@
     <h4 id = "sizeDisplay">| Size: 2</h4>
     <h4 id = "spaceDisplay">| Space: 2</h4>
     <h4 id = "stepsDisplay">| Steps: 140</h4>
-</section> 
+    </section> 
 
-<p>Welcome to the Phyollotaxis mover.  This is a project themed around creating phyllotaxis and moving them around to create interesting images.  To create another phyllotaxis click on the screen
-    adjust the controls to custimize you phyllotaxis and its movement around the canvas.
-</p>
 </body>
 </html>

@@ -60,7 +60,7 @@
             Phyllos.push(new Phyllotaxis(ctx, centerX, centerY, divergence, space, size, steps, color));
         },
 
-        updatePhyllos(xDis, yDis, canvasWidth, canvasHeight, moveType){
+        updatePhyllos(xDis, yDis, canvasWidth, canvasHeight){
             for(let i = 0; i < Phyllos.length; i++){
                 Phyllos[i].centerX += xDis;
                 Phyllos[i].centerY += yDis;

@@ -5,28 +5,56 @@
 }
 
 body{
-    max-width: 960px;
-    margin: auto;
+    font-size: 1.2rem;
+} 
+h1{
     text-align: center;
 }
-
-canvas{
-    border: darkcyan 5px solid;
-    padding-left: 0;
-    padding-right: 0;
+p{
     margin-left: auto;
     margin-right: auto;
-    display: block;
-    width: 640px;
+    text-align: left;
+    width: 800px;
+}
+canvas{
+    border: darkcyan 5px solid;
+    margin-left: 10px;
+    margin-right: auto;
+    display: flex;
 }
 button{
     background-color: #2b50aa;
     color: whitesmoke;
+    height: 50px;
+    width: 60px;
+    text-align: center;
 }
 h4{
     display:inline;
-    max-width: 1000px;
     margin: auto;
+}
+ul{
+    display:inline;
+    text-align: left;
+}
+h2{
+    text-align: left;
+}
+#controls{
+    margin-left: 10px;
+    display: block;
+    font-size: 1.3rem;
+}
+#instructions{
+    margin-left: 10%;
+    margin-right: 10px;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#stats{
+    text-align: center;
 }
 
 
