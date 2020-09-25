@@ -27,6 +27,7 @@
             <li>Use the checkbox to turn trails on or off and use the slider to control its length</li>
             <li>Use the reset button to rest the canvas </li>
             <li>Use the 'print' button to save the image on another page</li>
+            <li>Change the shape composing the phyllotaxis with the shape dropdown</li>
         </ul>
     </div>
     <div id = "canvas">
@@ -57,7 +58,14 @@
         <br>
         <span><label for="angleSlider">Angle: </label><input type="range" min="1" max="200" value="50" class="slider" id="angleSlider"></span>
         <br>
-
+        <label>Shape:
+            <select id="shapeChooser">
+            <option value="circle" selected>circle</option>
+            <option value="square">square</option> 
+            <option value="triangle">triangle</option>
+            </select>
+        </label>
+        <br>
         <label>Color:
             <select id="colorChooser">
             <option value="red" selected>red</option>
@@ -83,6 +91,7 @@
     <section id = "stats"> 
     <h4 id = "angleDisplay">Angle: 147.5</h4>
     <h4 id = "moveDisplay">| Movement: Line</h4>
+    <h4 id = "shapeDisplay">| Shape: Circle</h4>
     <h4 id = "colorDisplay">| Color: red</h4>
     <h4 id = "trailDisplay">| Trail Length: 50</h4>
     <h4 id = "sizeDisplay">| Size: 2</h4>

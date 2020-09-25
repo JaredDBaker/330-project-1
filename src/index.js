@@ -17,6 +17,7 @@
     let trailLength = 50;
     let counter = 0;
     let color = "red";
+    let shape = "circle";
 
     function init(){
         console.log("page loaded!");
@@ -30,8 +31,8 @@
         ctx = canvas.getContext('2d');
         ctx.fillRect(0,0,canvasWidth, canvasHeight);
         setupUI();
-        jdbLIB.drawPhyllotaxis(ctx, canvasWidth/2 + xDis, canvasHeight/2 + yDis, divergence, space, size, steps, color);
-        jdbLIB.pushPhyllos(ctx, canvasWidth/2 + xDis, canvasHeight/2 + yDis, divergence, space, size, steps, color);
+        jdbLIB.drawPhyllotaxis(ctx, canvasWidth/2 + xDis, canvasHeight/2 + yDis, divergence, space, size, steps, shape, color);
+        jdbLIB.pushPhyllos(ctx, canvasWidth/2 + xDis, canvasHeight/2 + yDis, divergence, space, size, steps, shape, color);
         playing();
     }
 
@@ -85,14 +86,19 @@
             document.querySelector("#colorDisplay").innerHTML = `|Color: ${color}`;
         }
 
+        document.querySelector("#shapeChooser").onchange = function(e){
+            shape = e.target.value;
+            document.querySelector("#shapeDisplay").innerHTML = `|Shape: ${shape}`;
+        }
+
         document.querySelector("#resetButton").onclick = function(){
             jdbLIB.cls(ctx, canvasWidth, canvasHeight);
             xDis = 0;
             yDis = 0;
             counter = 0;
             jdbLIB.clearPhyllos();
-            jdbLIB.drawPhyllotaxis(ctx, canvasWidth/2 + xDis, canvasHeight/2 + yDis, divergence, space, size, steps, color);
-            jdbLIB.pushPhyllos(ctx, canvasWidth/2 + xDis, canvasHeight/2 + yDis, divergence, space, size, steps, color);
+            jdbLIB.drawPhyllotaxis(ctx, canvasWidth/2 + xDis, canvasHeight/2 + yDis, divergence, space, size, steps, shape, color);
+            jdbLIB.pushPhyllos(ctx, canvasWidth/2 + xDis, canvasHeight/2 + yDis, divergence, space, size, steps, shape, color);
 
             pause = true;
         }
@@ -105,8 +111,8 @@
         let mouseY = e.clientY - rect.y;
         console.log(mouseX,mouseY);
 
-        jdbLIB.drawPhyllotaxis(ctx, mouseX, mouseY, divergence, space, size, steps, color);
-        jdbLIB.pushPhyllos(ctx, mouseX, mouseY, divergence, space, size, steps, color);
+        jdbLIB.drawPhyllotaxis(ctx, mouseX, mouseY, divergence, space, size, steps, shape, color);
+        jdbLIB.pushPhyllos(ctx, mouseX, mouseY, divergence, space, size, steps, shape, color);
 
     }
 

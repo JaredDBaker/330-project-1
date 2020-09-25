@@ -2,7 +2,7 @@
     "use strict";
     let Phyllos = [];
     const jdbLIB = {
-        drawPhyllotaxis(ctx, centerX, centerY, divergence, space, size, steps, colorType){
+        drawPhyllotaxis(ctx, centerX, centerY, divergence, space, size, steps, shapetype, colorType){
             for(let n = 0; n < steps; n++){
                 let a = n * this.dtr(divergence);
                 let r = space * Math.sqrt(n);
@@ -27,7 +27,16 @@
                     color = `hsl(${aDegrees},100%,50%)`;
                 }
 
-                this.drawCircle(ctx, x, y, size, color);
+                if(shapetype == "circle"){
+                    this.drawCircle(ctx, x, y, size, color);
+                }
+                else if(shapetype == "square"){
+                    this.drawSquare(ctx, x, y, size, size, color);
+                }
+                else if(shapetype == "triangle"){
+                    this.drawTriangle(ctx, x, y, size, color);
+                }
+
                  space += .001;
                  size += .001;
                 //space += space/100;
@@ -50,14 +59,35 @@
             ctx.restore();
         },
 
+        drawSquare(ctx,x,y, width, height, fillStyle){
+            ctx.save();
+            ctx.fillStyle = fillStyle;
+            ctx.translate(x, y);
+            ctx.fillRect(0-width, 0-height, width, height);
+            ctx.restore(); 
+        },
+
+        drawTriangle(ctx, x, y, size, color){
+            ctx.save();
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x + size, y);
+            ctx.lineTo(x + size/2, y + size);
+            ctx.lineTo(x, y);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+        },
+    
         cls(ctx, canvasWidth, canvasHeight){
             //ctx.clearRect(0, 0, canvasWidth, canvasHeight);
             ctx.fillStyle = "black";
             ctx.fillRect(0,0,canvasWidth, canvasHeight);
         },
 
-        pushPhyllos(ctx, centerX, centerY, divergence, space, size, steps, color){
-            Phyllos.push(new Phyllotaxis(ctx, centerX, centerY, divergence, space, size, steps, color));
+        pushPhyllos(ctx, centerX, centerY, divergence, space, size, steps, shape, color){
+            Phyllos.push(new Phyllotaxis(ctx, centerX, centerY, divergence, space, size, steps, shape, color));
         },
 
         updatePhyllos(xDis, yDis, canvasWidth, canvasHeight){
@@ -73,7 +103,7 @@
 
         drawPhyllos(){
             for(let i = 0; i < Phyllos.length; i++){
-                this.drawPhyllotaxis(Phyllos[i].ctx, Phyllos[i].centerX, Phyllos[i].centerY, Phyllos[i].divergence, Phyllos[i].space, Phyllos[i].size, Phyllos[i].steps, Phyllos[i].color);
+                this.drawPhyllotaxis(Phyllos[i].ctx, Phyllos[i].centerX, Phyllos[i].centerY, Phyllos[i].divergence, Phyllos[i].space, Phyllos[i].size, Phyllos[i].steps, Phyllos[i].shape, Phyllos[i].color);
             }
 
         },
@@ -85,7 +115,7 @@
     };
 
     let Phyllotaxis = class {
-        constructor(ctx, centerX, centerY, divergence, space, size, steps, color){
+        constructor(ctx, centerX, centerY, divergence, space, size, steps, shape, color){
             this.ctx = ctx;
             this.centerX = centerX;
             this.centerY = centerY;
@@ -93,6 +123,7 @@
             this.space = space;
             this. size = size;
             this.steps = steps;
+            this.shape = shape;
             this.color = color;
         }
     }
