@@ -22,6 +22,9 @@
                 else if(colorType == "green"){
                     color = `rgb(50,${aDegrees},20)`;
                 }
+                else if(colorType == "orange"){
+                    color = `rgb(${aDegrees},${aDegrees/2},20)`;
+                }
                 else if(colorType == "rainbow"){
                     aDegrees = (n * divergence % 361);
                     color = `hsl(${aDegrees},100%,50%)`;
